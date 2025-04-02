@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ebhcrqyv4nis"]
 
 [ext_resource type="PackedScene" uid="uid://loqaaktqq3kc" path="res://rigid_body_2d.tscn" id="1_tvpqx"]
-[ext_resource type="Script" path="res://anchor.gd" id="2_tvpqx"]
+[ext_resource type="Script" uid="uid://co6d1gehodo61" path="res://anchor.gd" id="2_tvpqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05t4c"]
 size = Vector2(1161, 60)
@@ -18,6 +18,17 @@ mass = 10.0
 [node name="RigidBody2D2" parent="." instance=ExtResource("1_tvpqx")]
 position = Vector2(735, 144)
 mass = 20.0
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("1_tvpqx")]
+unique_name_in_owner = true
+position = Vector2(236, 152)
+scale = Vector2(1, 0.2)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D4"]
+position = Vector2(61, 15)
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D")
+bias = 0.2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(2, 657)

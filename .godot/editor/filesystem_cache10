@@ -1,0 +1,6 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1743465452
+anchor.gd::GDScript/GDScript::5819709791970545608::1743454705::0::1::::<>StaticBody2D<><>0<>0<><>::
+core.tscn::PackedScene::283249261576855822::1743465452::0::1::::<><><>0<>0<><>::uid://loqaaktqq3kc::::res://rigid_body_2d.tscn<>uid://co6d1gehodo61::::res://anchor.gd
+icon.svg::CompressedTexture2D/CompressedTexture2D::1054364351202705292::1743454705::1743465445::1::::<><><>0<>0<>12035f2e0c51db4df11c7d4c8e5430eb<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+rigid_body_2d.tscn::PackedScene::801950056792816678::1743465452::0::1::::<><><>0<>0<><>::uid://pa0hyg6np4dk::::res://icon.svg
