@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxquwan623fvx"]
+
+[ext_resource type="Script" path="res://plop_particle.gd" id="1_pew78"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c32nu"]
+particle_flag_disable_z = true
+angle_min = -487.8
+angle_max = 572.9
+angular_velocity_min = -425.81
+angular_velocity_max = 665.8
+orbit_velocity_min = -0.623
+orbit_velocity_max = 0.0430001
+radial_velocity_min = -655.91
+radial_velocity_max = 311.83
+gravity = Vector3(0, -100, 0)
+radial_accel_min = -40.86
+radial_accel_max = 33.33
+scale_max = 3.0
+scale_over_velocity_max = 2.0
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+anim_speed_min = 5.32
+anim_speed_max = 11.18
+
+[sub_resource type="Gradient" id="Gradient_jrdsl"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fs421"]
+gradient = SubResource("Gradient_jrdsl")
+width = 3
+height = 3
+fill = 1
+fill_from = Vector2(0.509174, 0.5)
+fill_to = Vector2(0, 1)
+
+[node name="PlopParticle" type="GPUParticles2D"]
+modulate = Color(0.288, 0.242504, 0.0550743, 1)
+position = Vector2(694, 521)
+skew = 0.31765
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_c32nu")
+texture = SubResource("GradientTexture2D_fs421")
+lifetime = 2.0
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.12
+script = ExtResource("1_pew78")

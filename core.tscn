@@ -1,41 +1,69 @@
-[gd_scene load_steps=4 format=3 uid="uid://ebhcrqyv4nis"]
+[gd_scene load_steps=11 format=3 uid="uid://ebhcrqyv4nis"]
 
+[ext_resource type="Script" path="res://core.gd" id="1_gyb3q"]
 [ext_resource type="PackedScene" uid="uid://loqaaktqq3kc" path="res://rigid_body_2d.tscn" id="1_tvpqx"]
-[ext_resource type="Script" uid="uid://co6d1gehodo61" path="res://anchor.gd" id="2_tvpqx"]
+[ext_resource type="PackedScene" uid="uid://dxryxqv2iruil" path="res://collision_body.tscn" id="2_lcm4i"]
+[ext_resource type="Script" path="res://anchor.gd" id="2_tvpqx"]
+[ext_resource type="Script" path="res://cauldren.gd" id="2_vv2pa"]
+[ext_resource type="Script" path="res://item.gd" id="3_857hf"]
+[ext_resource type="Texture2D" uid="uid://pa0hyg6np4dk" path="res://icon.svg" id="3_wa840"]
+[ext_resource type="Resource" uid="uid://bxy02i81ub41b" path="res://apple_resource.tres" id="4_ts26o"]
+[ext_resource type="PackedScene" uid="uid://bxquwan623fvx" path="res://plop_particle.tscn" id="6_doi24"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_05t4c"]
-size = Vector2(1161, 60)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dejo3"]
+a = Vector2(977, 4)
+b = Vector2(102, 1)
 
 [node name="Core" type="Node2D"]
+script = ExtResource("1_gyb3q")
+recipe = {
+ExtResource("4_ts26o"): [ExtResource("4_ts26o"), ExtResource("4_ts26o"), ExtResource("4_ts26o")]
+}
 
-[node name="RigidBody2D" parent="." instance=ExtResource("1_tvpqx")]
-position = Vector2(355, 146)
-
-[node name="RigidBody2D3" parent="." instance=ExtResource("1_tvpqx")]
-position = Vector2(556, 144)
-mass = 10.0
+[node name="Pot" type="Node" parent="."]
+script = ExtResource("2_vv2pa")
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("1_tvpqx")]
-position = Vector2(735, 144)
-mass = 20.0
+modulate = Color(1, 0.670588, 1, 1)
+position = Vector2(1875, -248)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_857hf")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("1_tvpqx")]
+modulate = Color(1, 0.670588, 1, 1)
+position = Vector2(1527, -182)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_857hf")
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("1_tvpqx")]
+modulate = Color(1, 0.670588, 1, 1)
+position = Vector2(1524, -302)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_857hf")
 
 [node name="RigidBody2D4" parent="." instance=ExtResource("1_tvpqx")]
-unique_name_in_owner = true
-position = Vector2(236, 152)
-scale = Vector2(1, 0.2)
+modulate = Color(1, 0.670588, 1, 1)
+position = Vector2(1701, -242)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("3_857hf")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D4"]
-position = Vector2(61, 15)
-node_a = NodePath("..")
-node_b = NodePath("../../RigidBody2D")
-bias = 0.2
+[node name="StaticBody2D" parent="." instance=ExtResource("2_lcm4i")]
+position = Vector2(1424, -70)
+scale = Vector2(0.5, 0.5)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(2, 657)
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(543, -23)
+scale = Vector2(9.48438, 0.671875)
+texture = ExtResource("3_wa840")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(570.5, -20)
-shape = SubResource("RectangleShape2D_05t4c")
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_lcm4i")]
+position = Vector2(-886, -124)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(546, -16)
+scale = Vector2(9.48438, 0.671875)
+texture = ExtResource("3_wa840")
 
 [node name="Anchor" type="StaticBody2D" parent="."]
 script = ExtResource("2_tvpqx")
@@ -44,3 +72,61 @@ script = ExtResource("2_tvpqx")
 node_a = NodePath("..")
 bias = 0.3
 softness = 1.0
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_lcm4i")]
+position = Vector2(1011, 514)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(-2498, -10)
+scale = Vector2(9.48438, 0.671875)
+texture = ExtResource("3_wa840")
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_lcm4i")]
+position = Vector2(72, 503)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D4" type="Sprite2D" parent="StaticBody2D5"]
+position = Vector2(11.9999, -2460)
+rotation = -1.5708
+scale = Vector2(9.48438, 0.671875)
+texture = ExtResource("3_wa840")
+
+[node name="Sprite2D5" type="Sprite2D" parent="StaticBody2D5"]
+position = Vector2(582, -34)
+scale = Vector2(9.48438, 0.671875)
+texture = ExtResource("3_wa840")
+
+[node name="Sprite2D6" type="Sprite2D" parent="StaticBody2D5"]
+position = Vector2(594, -1904)
+scale = Vector2(9.48438, 0.671875)
+texture = ExtResource("3_wa840")
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_lcm4i")]
+position = Vector2(1014, 499)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_lcm4i")]
+position = Vector2(-519, 520)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(556, 355)
+zoom = Vector2(0.4, 0.4)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(21, 794)
+shape = SubResource("SegmentShape2D_dejo3")
+
+[node name="PlopParticle" parent="Area2D" instance=ExtResource("6_doi24")]
+position = Vector2(513, 782)
+amount = 250
+explosiveness = 0.0
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="Area2D/PlopParticle" method="_on_area_2d_body_shape_entered"]

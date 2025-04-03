@@ -1,2 +1,11 @@
+res://item_script.gd
+res://apple_script.gd
+res://item_resource.tres
+res://plop_particle.tscn
 res://core.tscn
+res://item.gd
+res://core.gd
 res://rigid_body_2d.tscn
+res://collision_body.tscn
+res://apple_resource.tres
+res://cauldren.gd

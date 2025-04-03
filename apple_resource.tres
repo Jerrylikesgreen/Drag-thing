@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="Apple" load_steps=2 format=3 uid="uid://bxy02i81ub41b"]
+
+[ext_resource type="Script" path="res://apple_script.gd" id="1_px42t"]
+
+[resource]
+script = ExtResource("1_px42t")
